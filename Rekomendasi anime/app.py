@@ -7,8 +7,8 @@ from io import StringIO
 # ========================
 # LOAD DATA
 # ========================
-anime = pd.read_csv("C:/Users/DELL/Documents/New folder/anime.csv")
-rating = pd.read_csv("C:/Users/DELL/Documents/New folder/rating.csv")
+anime = pd.read_csv("anime.csv")
+rating = pd.read_csv("rating.csv")
 
 # Buang rating -1
 rating = rating[rating['rating'] != -1]
