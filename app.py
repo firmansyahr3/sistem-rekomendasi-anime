@@ -98,7 +98,7 @@ if not hasil_rekomendasi:
     st.warning("Tidak ada rekomendasi yang cocok dengan genre yang dipilih.")
 else:
     hasil_df = pd.DataFrame(hasil_rekomendasi).head(10)
-    st.dataframe(hasil_df)
+    st.dataframe(hasil_df.reset_index(drop=True).rename_axis('No').reset_index())
 
     # Tombol Download CSV
     csv_buffer = StringIO()
