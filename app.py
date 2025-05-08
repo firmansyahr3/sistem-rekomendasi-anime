@@ -98,7 +98,9 @@ if not hasil_rekomendasi:
     st.warning("Tidak ada rekomendasi yang cocok dengan genre yang dipilih.")
 else:
     hasil_df = pd.DataFrame(hasil_rekomendasi).head(10)
-    st.dataframe(hasil_df.reset_index(drop=True).rename_axis('No').reset_index())
+hasil_df.index = np.arange(1, len(hasil_df) + 1)  # Mulai dari 1
+hasil_df.reset_index(names='No', inplace=True)  # Kolom "No" sebagai penomoran
+st.dataframe(hasil_df)
 
     # Tombol Download CSV
     csv_buffer = StringIO()
