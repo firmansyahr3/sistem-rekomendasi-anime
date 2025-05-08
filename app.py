@@ -103,7 +103,7 @@ hasil_df.reset_index(names='No', inplace=True)  # Kolom "No" sebagai penomoran
 st.dataframe(hasil_df)
 
     # Tombol Download CSV
-    csv_buffer = StringIO()
+csv_buffer = StringIO()
     hasil_df.to_csv(csv_buffer, index=False)
     st.download_button(
         label="📥 Download Rekomendasi sebagai CSV",
